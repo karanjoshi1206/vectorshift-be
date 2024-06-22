@@ -7,9 +7,8 @@ app = FastAPI()
 
 # Set up CORS
 origins = [
-    "http://localhost:3000",  # Frontend server URL, add other origins as needed
+    "http://localhost:3000", 
     "http://127.0.0.1:3000"
-    # Add more allowed origins here
 ]
 
 app.add_middleware(
@@ -26,7 +25,6 @@ def read_root():
 
 @app.post('/pipelines/parse')
 def parse_pipeline(pipeline: str = Form(...)):
-    print("ENTERSe")
     # Parse the pipeline JSON
     pipeline_data = json.loads(pipeline)
     
